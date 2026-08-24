@@ -1,8 +1,9 @@
 FROM php:8.4-cli
 
-# Install system dependencies & PHP extensions
+# Install system dependencies & PHP extensions + CA Certificates
 RUN apt-get update && apt-get install -y \
-    git curl libpng-dev libonig-dev libxml2-dev libzip-dev zip unzip \
+    git curl libpng-dev libonig-dev libxml2-dev libzip-dev zip unzip ca-certificates \
+    && update-ca-certificates \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 # Install Composer
