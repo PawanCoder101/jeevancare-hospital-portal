@@ -1,0 +1,653 @@
+/* ==========================================
+   HERO 3-LAYER FAST ROTATING SYSTEM
+   ========================================== */
+
+.logo-animation-wrapper {
+    width: 340px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center Disc Specs */
+.center-hospital-logo {
+    width: 220px;
+    height: 220px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 10;
+    border: 4px solid #ffffff;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+    text-align: center;
+}
+
+.branding-title-text {
+    font-size: 1.35rem;
+    color: #0f172a !important;
+    letter-spacing: -0.5px;
+}
+.sub-branding-text {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+}
+.divider-line {
+    width: 65px;
+    height: 2px;
+    background: #ff5e57;
+}
+.patient-tagline {
+    font-size: 0.68rem;
+    color: #64748b !important;
+}
+
+/* Base Configuration for All 3 Rings */
+.rotating-ring {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------------------------------
+   LAYER 1: OUTER FAST RING (Cyan/Blue Theme)
+   ------------------------------------------- */
+.ring-layer-1 {
+    width: 320px;
+    height: 320px;
+    border: 2px solid rgba(6, 182, 212, 0.15);
+    border-top: 2px solid #06b6d4;
+    border-right: 2px solid #0d6efd;
+    z-index: 3;
+    /* रोटेशन स्पीड को 12s से घटाकर 4s कर दिया है (Fast Loop) */
+    animation: rotateClockwise 4s linear infinite;
+}
+
+/* -------------------------------------------
+   LAYER 2: MIDDLE FAST REVERSE RING (Magenta/Purple)
+   ------------------------------------------- */
+.ring-layer-2 {
+    width: 285px;
+    height: 285px;
+    border: 2px solid rgba(168, 85, 247, 0.1);
+    border-bottom: 2px solid #a855f7;
+    border-left: 2px solid #ec4899;
+    z-index: 4;
+    /* उल्टी दिशा में तेज स्पीड (3.5s Fast Reverse Loop) */
+    animation: rotateCounterClockwise 3.5s linear infinite;
+}
+
+/* -------------------------------------------
+   LAYER 3: INNER ULTRA FAST DASHED RING (Tech Spec)
+   ------------------------------------------- */
+.ring-layer-3 {
+    width: 250px;
+    height: 250px;
+    border: 2px dashed rgba(13, 110, 253, 0.4);
+    z-index: 5;
+    /* सबसे अंदर वाली लेयर सुपर फ़ास्ट घूमेगी (2.5s Ultra Fast Loop) */
+    animation: rotateClockwise 2.5s linear infinite;
+}
+
+/* Satellite Traveling Dots Setup */
+.ring-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px currentcolor;
+}
+.dot-cyan {
+    top: 38px;
+    right: 38px;
+    background-color: #06b6d4;
+    color: #06b6d4;
+}
+.dot-purple {
+    bottom: 32px;
+    left: 32px;
+    background-color: #ec4899;
+    color: #ec4899;
+}
+
+/* Core System Keyframes */
+@keyframes rotateClockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Mobile Screen Fluid Scaling */
+@media (max-width: 991.98px) {
+    .logo-animation-wrapper {
+        width: 270px;
+        height: 270px;
+    }
+    .center-hospital-logo {
+        width: 180px;
+        height: 180px;
+    }
+    .ring-layer-1 { width: 265px; height: 265px; }
+    .ring-layer-2 { width: 235px; height: 235px; }
+    .ring-layer-3 { width: 205px; height: 205px; }
+    .ring-dot { width: 8px; height: 8px; }
+    .dot-cyan { top: 30px; right: 30px; }
+    .dot-purple { bottom: 24px; left: 24px; }
+}
+
+
+
+
+/* ==========================================
+   EXACT SAME MATCHING GRAPHICS CSS
+   ========================================== */
+
+/* Left Title Specs */
+.exact-headline {
+    font-size: 2rem;
+    color: #333333;
+}
+.text-primary-color {
+    color: #0076c0; /* सटीक मेडिकल स्काई-ब्लू शेड */
+}
+
+/* Exact Same Orange Underline Line */
+.exact-orange-line {
+    width: 55px;
+    height: 3px;
+    background-color: #ff6a00; /* सटीक थिक ऑरेंज अंडरलाइन */
+}
+
+.exact-description-text {
+    font-size: 0.92rem;
+    color: #666666 !important;
+    text-align: justify;
+}
+
+/* Icon Design (No Box, Just Plain Icon Like Image) */
+.exact-icon-style {
+    font-size: 2.5rem;
+    color: #0076c0; /* इमेज जैसा ही लाइट ब्लू आइकॉन */
+    display: block;
+    margin-bottom: 5px;
+}
+.exact-icon-style i {
+    font-weight: normal !important;
+}
+
+/* Typography Counter Numbers */
+.exact-stat-unit h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333333 !important;
+}
+
+/* Phone Number font reduction to match image layout */
+.phone-number-style {
+    font-size: 1.35rem !important;
+    letter-spacing: -0.5px;
+}
+
+/* Sub labels font setup */
+.exact-label {
+    font-size: 0.85rem;
+    color: #555555 !important;
+}
+
+/* Thin Grey Grid Divider Line */
+.exact-section-divider {
+    border: 0;
+    border-top: 1px solid #dddddd;
+    opacity: 1;
+}
+
+/* Mobile Screens Smooth Responsiveness */
+@media (max-width: 575.98px) {
+    .exact-headline { font-size: 1.6rem !important; }
+    .exact-icon-style { font-size: 2rem; }
+    .exact-stat-unit h3 { font-size: 1.3rem; }
+    .exact-label { font-size: 0.78rem; }
+    .phone-number-style { font-size: 1.1rem !important; }
+}
+
+
+/* ==========================================
+   EXACT IMAGE MATCHING DEPT SCROLL CSS
+   ========================================== */
+
+.premium-dept-scroll-section {
+    padding: 70px 0 !important;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+/* Headline Typography from Image */
+.exact-title-style {
+    font-size: 2.5rem !important;
+    font-weight: 700;
+}
+.exact-subtitle-style {
+    font-size: 1.05rem;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+/* Exact Circle badging without extra inner padding boxes */
+.exact-circle-badge {
+    width: 165px;
+    height: 165px;
+    background-color: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+/* Exact Thin Icon Setup Like Image Blueprint */
+.exact-icon-wrap {
+    font-size: 2.2rem;
+    color: #0061d5; /* थिन कॉर्पोरेट ब्लू आइकॉन */
+    line-height: 1;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.exact-icon-wrap i {
+    font-weight: normal !important;
+}
+
+/* Label text spacing & font alignment */
+.exact-dept-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f2d59 !important; /* डीप नेवी ब्लू टेक्स्ट */
+    text-align: center;
+    padding: 0 12px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Infinite Endless Scrolling Engine Track */
+.dept-track-wrapper {
+    width: max-content;
+    display: flex;
+    gap: 2.5rem; /* सर्कल्स के बीच सटीक खाली जगह (Gap) */
+    animation: continuousMarqueeScroll 25s linear infinite;
+}
+
+/* Hover state physics */
+.exact-circle-badge:hover {
+    transform: scale(1.06);
+}
+.dept-slider-canvas:hover .dept-track-wrapper {
+    animation-play-state: paused;
+}
+
+/* Continuous Horizontal Movement Animation */
+@keyframes continuousMarqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Small Device Mobile Optimization */
+@media (max-width: 767.98px) {
+    .exact-circle-badge {
+        width: 135px;
+        height: 135px;
+    }
+    .exact-icon-wrap { font-size: 1.8rem; }
+    .exact-dept-name { font-size: 0.76rem; padding: 0 8px; }
+    .exact-title-style { font-size: 1.8rem !important; }
+    .exact-subtitle-style { font-size: 0.9rem; }
+    .dept-track-wrapper { gap: 1.5rem; }
+}
+
+/* ==========================================
+   PREMIUM SYSTEM COUNTERS INFRASTRUCTURE
+   ========================================== */
+
+.premium-stats-canvas {
+    background-color: #f8fafc !important; /* साफ़, ब्राइट लाइट-ग्रे प्रीमियम बैकग्राउंड */
+    padding: 60px 0;
+}
+
+/* Luxury Soft Background Ambient Glows */
+.stats-bg-glow-1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.05) 0%, rgba(0,0,0,0) 70%);
+    top: -50px;
+    left: -50px;
+    z-index: 1;
+}
+.stats-bg-glow-2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(220, 53, 69, 0.04) 0%, rgba(0,0,0,0) 70%);
+    bottom: -50px;
+    right: -50px;
+    z-index: 1;
+}
+
+/* Elite Glassmorphism Base Cards */
+.luxury-counter-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Icon Wrap Layer */
+.counter-icon-box {
+    width: 58px;
+    height: 58px;
+    transition: transform 0.3s ease;
+}
+
+/* Typography Overrides */
+.text-dark-blue {
+    color: #0f2d59 !important; /* कॉर्पोरेट डीप हेल्थकेयर ब्लू */
+}
+.counter-label {
+    font-size: 0.76rem !important;
+    letter-spacing: 0.5px;
+}
+
+/* Hover Dynamic Lift & Subtle Shadows */
+.luxury-counter-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(13, 110, 253, 0.2) !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06) !important;
+    background: #ffffff !important;
+}
+
+.luxury-counter-card:hover .counter-icon-box {
+    transform: scale(1.08);
+}
+
+/* Emergency Highlight Hover State */
+.emergency-glow-card:hover {
+    border-color: rgba(220, 53, 69, 0.25) !important;
+    box-shadow: 0 12px 30px rgba(220, 53, 69, 0.08) !important;
+}
+
+/* Pulse animation for 24/7 Red Icon desk */
+.pulse-red-icon {
+    animation: smoothPulseIcon 2s infinite ease-in-out;
+}
+@keyframes smoothPulseIcon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Micro Mobile Display Configurations */
+@media (max-width: 575.98px) {
+    .premium-stats-canvas { padding: 40px 0; }
+    .luxury-counter-card { padding: 18px 10px !important; }
+    .display-5 { font-size: 1.6rem !important; }
+    .counter-label { font-size: 0.68rem !important; }
+    .counter-icon-box { width: 46px; height: 46px; }
+    .counter-icon-box i { font-size: 1.25rem !important; }
+}
+
+
+
+/* ==========================================
+   PREMIUM SYSTEM SERVICES CARD INFRASTRUCTURE
+   ========================================== */
+
+.services-premium-canvas {
+    background-color: #f8fafc !important; /* क्लीन और लाइट मॉडर्न बैकग्राउंड */
+    padding: 60px 0;
+}
+
+.section-headline-main {
+    color: #0f2d59 !important; /* प्रीमियम डार्क मेडिकल ब्लू */
+}
+
+/* Luxury Service Dynamic Box Design */
+.service-luxury-box {
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    border-radius: 20px !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Centered Icon Shield Base dimensions */
+.service-icon-wrapper {
+    width: 62px;
+    height: 62px;
+    transition: transform 0.3s ease;
+}
+
+.service-item-title {
+    font-size: 1.25rem;
+    letter-spacing: -0.3px;
+}
+
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+/* Read More Links & Arrow Keyframe Setup */
+.service-arrow-link {
+    transition: color 0.25s ease;
+}
+.animate-arrow {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= Hover Dynamic Interventions ================= */
+.service-luxury-box:hover {
+    transform: translateY(-6px);
+    border-color: rgba(13, 110, 253, 0.2) !important;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.07) !important;
+}
+
+.service-luxury-box:hover .service-icon-wrapper {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+/* Arrow shifts to the right on card hover */
+.service-luxury-box:hover .animate-arrow {
+    transform: translateX(4px);
+}
+.service-luxury-box:hover .service-arrow-link {
+    color: #0040a8 !important;
+}
+
+/* Responsive Grid Adapters for Micro viewports */
+@media (max-width: 575.98px) {
+    .service-luxury-box {
+        padding: 30px 20px !important;
+    }
+    .section-headline-main {
+        font-size: 1.8rem !important;
+    }
+    .service-item-title {
+        font-size: 1.15rem;
+    }
+}
+
+
+
+
+
+/* ==========================================
+   EXACT BLUEPRINT WHY CHOOSE US LAYOUT
+   ========================================== */
+
+.exact-why-choose-canvas {
+    background-color: #f8fafc !important; /* स्क्रीनशॉट जैसा हल्का क्लीन बैकग्राउंड */
+    padding: 70px 0 !important;
+}
+
+/* Header Text styling */
+.exact-why-title {
+    font-size: 2.2rem;
+    color: #0076c0 !important; /* स्काई-ब्लू ओरिजिनल कलर */
+    font-weight: 700;
+}
+
+/* Brand Text Architecture inside section */
+.branding-text-main {
+    font-size: 1.5rem;
+    color: #1e293b !important;
+    letter-spacing: -0.5px;
+}
+.branding-text-sub {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+.brand-underline-decor {
+    width: 80px;
+    height: 2px;
+    background-color: #ff6a00; /* हुबहू ऑरेंज ब्रांड डिवाइडर लाइन */
+}
+.branding-tagline-text {
+    font-size: 0.72rem;
+    color: #64748b !important;
+}
+
+/* Paragraph Content Spacing */
+.exact-para-content {
+    font-size: 0.92rem;
+    color: #475569 !important;
+    max-width: 540px;
+    text-align: justify;
+}
+
+/* Exact Pill Outline Interactive Button Setup */
+.exact-pill-outline-btn {
+    border: 1.5px solid #334155 !important;
+    background-color: transparent !important;
+    color: #334155 !important;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 10px 28px !important;
+    border-radius: 50px !important; /* परफेक्ट पिल शेप */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exact-pill-outline-btn:hover {
+    background-color: #0076c0 !important;
+    border-color: #0076c0 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 118, 192, 0.2);
+}
+
+/* Rectangular Image Box Frame Specs */
+.exact-img-frame {
+    width: 100%;
+    height: 400px; /* परफेक्ट रेक्टेंगुलर शेप जैसा कि आपके स्क्रीनशॉट में दाहिनी तरफ है */
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+.exact-medical-img {
+    object-fit: cover;
+}
+
+/* Clean Responsive Breakpoints */
+@media (max-width: 991.98px) {
+    .exact-why-title { font-size: 1.8rem !important; }
+    .exact-img-frame { height: 280px; }
+    .exact-para-content { max-width: 100%; text-align: center; }
+}
+
+
+
+
+
+
+/* ==========================================
+   EXACT IMAGE_9536DD.JPG CTA BLUEPRINT
+   ========================================== */
+
+.exact-trust-cta-banner {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background blend layers to create the multi-image/collage look from image_9536dd.jpg */
+.collage-blend-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at right, rgba(255, 255, 255, 0.05) 0%, rgba(11, 29, 58, 0.4) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Exact Headline Typography styling */
+.exact-cta-headline {
+    font-size: 2.3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Subheading text styling */
+.exact-cta-subheading {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* Premium Transparent White Pill Button for Contact Us */
+.exact-contact-cta-btn {
+    background-color: #ffffff !important;
+    color: #0b1d3a !important; /* प्रीमियम डार्क थीम कलर */
+    font-size: 0.92rem;
+    border: 2px solid #ffffff !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover Physics for Button */
+.exact-contact-cta-btn:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Responsive Scaling Matrix for Mobile screens */
+@media (max-width: 767.98px) {
+    .exact-trust-cta-banner {
+        background: linear-gradient(rgba(11, 29, 58, 0.9), rgba(11, 29, 58, 0.9)), 
+                    url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800') center/cover no-repeat !important;
+        min-height: 320px !important;
+    }
+    .pricing-cta-wrap {
+        min-height: 320px !important;
+    }
+    .exact-cta-headline {
+        font-size: 1.6rem !important;
+    }
+    .exact-cta-subheading {
+        font-size: 0.95rem;
+    }
+    .exact-contact-cta-btn {
+        padding: 10px 35px !important;
+        width: 100%; /* मोबाइल पर बटन पूरी चौड़ाई में आ जाएगा ताकि दबाने में आसानी हो */
+    }
+}

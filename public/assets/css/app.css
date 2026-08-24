@@ -1,0 +1,374 @@
+/* ==========================================
+   GLOBAL VARIABLES & RESET
+   ========================================== */
+:root {
+    --text-main: #0f172a;
+    --text-sub: #475569;
+    --nav-bg-glass: rgba(255, 255, 255, 0.88);
+    
+    /* Luxury Gradients & Colors */
+    --medical-blue: #0284c7;
+    --medical-cyan: #06b6d4;
+    --gradient-primary: linear-gradient(135deg, #0961dd 0%, #00b4db 100%);
+    --gradient-hover: linear-gradient(135deg, #0046ad 0%, #008cae 100%);
+    
+    /* Dark Footer Theme */
+    --footer-bg-dark: #090d16;
+    --footer-muted: #94a3b8;
+    --footer-bright: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+}
+
+/* ==========================================
+   HIGH-END LUXURY NAVBAR
+   ========================================== */
+.premium-navbar {
+    background-color: var(--nav-bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 14px 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Elegant Subtle Bottom Border Line instead of standard solid color */
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.navbar-spacer {
+    height: 82px;
+}
+
+/* Brand Identity */
+.brand-logo-container img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.4s var(--transition-bounce);
+}
+.navbar-brand:hover .brand-logo-container img {
+    transform: rotate(-5deg) scale(1.05);
+}
+.brand-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0b132b;
+}
+.brand-highlight {
+    color: #0961dd;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Premium Links & Fluid Underline */
+.navbar-nav {
+    gap: 4px;
+}
+.luxury-link {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-sub) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 18px !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.luxury-link:hover {
+    color: #0961dd !important;
+}
+
+/* Sleek Capsule-style Underline Indicator */
+.luxury-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 18px;
+    right: 18px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 50px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.luxury-link:hover::after,
+.luxury-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.luxury-link.active {
+    color: #0961dd !important;
+    font-weight: 600;
+}
+
+/* Ultra Modern Floating Gradient Button */
+.btn-luxury-gradient {
+    background: var(--gradient-primary);
+    color: #ffffff !important;
+    padding: 8px 10px 8px 24px;
+    border-radius: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(9, 97, 221, 0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+.icon-circle {
+    background: rgba(255, 255, 255, 0.18);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+.btn-luxury-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(9, 97, 221, 0.4);
+    background: var(--gradient-hover);
+}
+.btn-luxury-gradient:hover .icon-circle {
+    transform: translateX(3px);
+    background: rgba(255, 255, 255, 0.3);
+}
+.btn-luxury-gradient:active {
+    transform: translateY(-1px);
+}
+
+/* Minimalist Premium Hamburger */
+.luxury-toggler {
+    border: none !important;
+    padding: 0;
+    width: 24px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.luxury-toggler:focus {
+    box-shadow: none !important;
+}
+.luxury-toggler .bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.luxury-toggler .bar:nth-child(2) {
+    width: 75%;
+    margin-left: auto;
+}
+
+/* Responsive Mobile Layout adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: #ffffff;
+        margin-top: 15px;
+        padding: 24px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .luxury-link {
+        padding: 14px 10px !important;
+        width: 100%;
+        text-align: center;
+    }
+    .luxury-link::after {
+        display: none;
+    }
+    .luxury-link.active {
+        background-color: rgba(9, 97, 221, 0.06);
+        border-radius: 10px;
+    }
+    .w-100-mobile {
+        width: 100%;
+    }
+    .btn-luxury-gradient {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    /* Hamburger Active Rotation */
+    .luxury-toggler[aria-expanded="true"] .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .luxury-toggler[aria-expanded="true"] .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .luxury-toggler[aria-expanded="true"] .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* ==========================================
+   MODERN FOOTER DESIGN
+   ========================================== */
+.modern-footer {
+    background-color: var(--footer-bg-dark);
+    color: var(--footer-muted);
+    font-size: 0.95rem;
+    border-top: 5px solid #0961dd;
+}
+
+.footer-brand h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--footer-bright);
+    font-weight: 700;
+}
+.footer-brand h4 span {
+    color: #00b4db;
+}
+
+.footer-desc {
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.footer-heading {
+    color: var(--footer-bright);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+}
+
+/* Footer Menu Styling */
+.footer-links-list li {
+    margin-bottom: 12px;
+}
+.footer-link {
+    color: var(--footer-muted);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.footer-link i {
+    font-size: 0.7rem;
+    margin-right: 8px;
+    transition: transform 0.25s ease;
+}
+.footer-link:hover {
+    color: var(--footer-bright);
+    transform: translateX(5px);
+}
+.footer-link:hover i {
+    transform: translateX(2px);
+    color: #00b4db;
+}
+
+/* Contact Info Badge */
+.emergency-badge {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    margin-top: 24px;
+}
+.emergency-icon-box {
+    background: rgba(9, 97, 221, 0.15);
+    color: #00b4db;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+.emergency-number {
+    color: var(--footer-bright);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.emergency-number:hover {
+    color: #00b4db;
+}
+
+/* Clean Working Hours Display */
+.hours-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 20px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+}
+.text-danger-custom {
+    color: #f87171;
+}
+.pulse-dot {
+    font-size: 0.6rem;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* Social Media & Bottom Row */
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.06);
+}
+.footer-bottom {
+    color: #475569;
+}
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .footer-socials {
+        justify-content: flex-end;
+    }
+}
+.social-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--footer-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+.social-icon:hover {
+    background: var(--gradient-primary);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(9, 97, 221, 0.3);
+}
